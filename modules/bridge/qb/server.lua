@@ -155,13 +155,28 @@ function server.buyLicense(inv, license)
 
 	if player.PlayerData.metadata.licences[license.name] then
 		return false, 'already_have'
-	elseif Inventory.GetItem(inv, 'money', false, true) < license.price then
+	--elseif Inventory.GetItem(inv, 'money', false, true) < license.price then
+	elseif player.Functions.GetMoney('bank') < license.price then
 		return false, 'can_not_afford'
 	end
 
-	Inventory.RemoveItem(inv, 'money', license.price)
+	local licenseDisplayName = string.upper(string.sub(license.name, 1, 1)) .. string.sub(license.name, 2)
+	exports['Renewed-Banking']:handleTransaction(
+		player.PlayerData.citizenid,
+		licenseDisplayName .. ' License Purchase',
+		license.price,
+		'',
+		licenseDisplayName .. ' License Shop',
+		player.PlayerData.charinfo.firstname .. ' ' .. player.PlayerData.charinfo.lastname,
+		'withdraw'
+	)
+
+	--Inventory.RemoveItem(inv, 'money', license.price)
+	player.Functions.RemoveMoney('bank', license.price, 'license purchase')
 	player.PlayerData.metadata.licences[license.name] = true
 	player.Functions.SetMetaData('licences', player.PlayerData.metadata.licences)
+
+	exports.ox_inventory:AddItem(inv.id, license.item, 1)
 
 	return true, 'have_purchased'
 end

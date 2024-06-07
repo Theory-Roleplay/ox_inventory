@@ -4,9 +4,23 @@ return {
 		blip = {
 			id = 59, colour = 69, scale = 0.8
 		}, inventory = {
-			{ name = 'burger', price = 10 },
-			{ name = 'water', price = 10 },
-			{ name = 'cola', price = 10 },
+			{ name = 'lockpick', price = 250, currency = 'bank' },
+			{ name = 'fruitphone', price = 100, currency = 'bank' },
+			{ name = 'robotphone', price = 100, currency = 'bank' },
+			{ name = 'blox', price = 5, currency = 'bank' },
+			{ name = 'microfibercloth', price = 1, currency = 'bank' },
+			{ name = 'basketball', price = 1, currency = 'bank' },
+			{ name = 'basketball_hoop', price = 50, currency = 'bank' },
+			{ name = 'spray', price = 5, currency = 'bank' },
+			{ name = 'spray_remover', price = 1, currency = 'bank' },
+			{ name = 'cardboard_box', price = 5, currency = 'bank' },
+			{ name = 'empty_baggie', price = 1, currency = 'bank' },
+			{ name = 'keyring', price = 5, currency = 'bank' },
+			{ name = 'wallet', price = 5, currency = 'bank' },
+			{ name = 'hiqualnutrients', price = 15, currency = 'bank' },
+			{ name = 'wateringcan', price = 10, currency = 'bank' },
+			{ name = 'megaphone', price = 10, currency = 'bank' },
+			{ name = 'rollingpapers', price = 1, currency = 'bank' },
 		}, locations = {
 			vec3(25.7, -1347.3, 29.49),
 			vec3(-3038.71, 585.9, 7.9),
@@ -32,6 +46,7 @@ return {
 		}
 	},
 
+	--[[
 	Liquor = {
 		name = 'Liquor Store',
 		blip = {
@@ -57,13 +72,15 @@ return {
 			{ loc = vec3(1393.0, 3605.95, 35.11), length = 0.6, width = 0.6, heading = 200.0, minZ = 35.0, maxZ = 35.4, distance = 1.5 }
 		}
 	},
+	]]
 
+	--[[
 	YouTool = {
 		name = 'YouTool',
 		blip = {
 			id = 402, colour = 69, scale = 0.8
 		}, inventory = {
-			{ name = 'lockpick', price = 10 }
+			{ name = 'lockpick', price = 400, currency = 'bank' }
 		}, locations = {
 			vec3(2748.0, 3473.0, 55.67),
 			vec3(342.99, -1298.26, 32.51)
@@ -71,16 +88,19 @@ return {
 			{ loc = vec3(2746.8, 3473.13, 55.67), length = 0.6, width = 3.0, heading = 65.0, minZ = 55.0, maxZ = 56.8, distance = 3.0 }
 		}
 	},
+	]]
 
 	Ammunation = {
 		name = 'Ammunation',
 		blip = {
-			id = 110, colour = 69, scale = 0.8
+			id = 110, colour = 49, scale = 0.8
 		}, inventory = {
-			{ name = 'ammo-9', price = 5, },
-			{ name = 'WEAPON_KNIFE', price = 200 },
-			{ name = 'WEAPON_BAT', price = 100 },
-			{ name = 'WEAPON_PISTOL', price = 1000, metadata = { registered = true }, license = 'weapon' }
+			{ name = 'armor', price = 50, currency = 'bank' },
+			{ name = 'ammo-9', price = 5, currency = 'bank' },
+			{ name = 'WEAPON_KNIFE', price = 200, currency = 'bank' },
+			{ name = 'WEAPON_BAT', price = 100, currency = 'bank' },
+			{ name = 'WEAPON_CROWBAR', price = 100, currency = 'bank' },
+			{ name = 'WEAPON_PISTOL', price = 1000, currency = 'bank', metadata = { registered = true }, license = 'weapon' }
 		}, locations = {
 			vec3(-662.180, -934.961, 21.829),
 			vec3(810.25, -2157.60, 29.62),
@@ -104,26 +124,7 @@ return {
 		}
 	},
 
-	PoliceArmoury = {
-		name = 'Police Armoury',
-		groups = shared.police,
-		blip = {
-			id = 110, colour = 84, scale = 0.8
-		}, inventory = {
-			{ name = 'ammo-9', price = 5, },
-			{ name = 'ammo-rifle', price = 5, },
-			{ name = 'WEAPON_FLASHLIGHT', price = 200 },
-			{ name = 'WEAPON_NIGHTSTICK', price = 100 },
-			{ name = 'WEAPON_PISTOL', price = 500, metadata = { registered = true, serial = 'POL' }, license = 'weapon' },
-			{ name = 'WEAPON_CARBINERIFLE', price = 1000, metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 3 },
-			{ name = 'WEAPON_STUNGUN', price = 500, metadata = { registered = true, serial = 'POL'} }
-		}, locations = {
-			vec3(451.51, -979.44, 30.68)
-		}, targets = {
-			{ loc = vec3(453.21, -980.03, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
-		}
-	},
-
+	--[[
 	Medicine = {
 		name = 'Medicine Cabinet',
 		groups = {
@@ -141,29 +142,82 @@ return {
 		}
 	},
 
-	BlackMarketArms = {
-		name = 'Black Market (Arms)',
-		inventory = {
-			{ name = 'WEAPON_DAGGER', price = 5000, metadata = { registered = false	}, currency = 'black_money' },
-			{ name = 'WEAPON_CERAMICPISTOL', price = 50000, metadata = { registered = false }, currency = 'black_money' },
-			{ name = 'at_suppressor_light', price = 50000, currency = 'black_money' },
-			{ name = 'ammo-rifle', price = 1000, currency = 'black_money' },
-			{ name = 'ammo-rifle2', price = 1000, currency = 'black_money' }
-		}, locations = {
-			vec3(309.09, -913.75, 56.46)
-		}, targets = {
-
-		}
-	},
-
 	VendingMachineDrinks = {
 		name = 'Vending Machine',
 		inventory = {
-			{ name = 'water', price = 10 },
-			{ name = 'cola', price = 10 },
+			{ name = 'sprunk', price = 1 },
 		},
 		model = {
 			`prop_vend_soda_02`, `prop_vend_fridge01`, `prop_vend_water_01`, `prop_vend_soda_01`
+		}
+	},
+	]]
+
+	AutoParts = {
+		name = "Auto Parts Store",
+		blip = {
+			id = 59,
+			colour = 29,
+			scale = 0.8
+		},
+		inventory = {
+			{ name = "veh_toolbox", price = 20, currency = "bank", },
+			{ name = "veh_brakes", price = 500, currency = "bank", },
+			{ name = "veh_engine", price = 500, currency = "bank", },
+			{ name = "veh_suspension", price = 500, currency = "bank", },
+			{ name = "veh_transmission", price = 500, currency = "bank", },
+			{ name = "veh_turbo", price = 1000, currency = "bank", },
+			{ name = "veh_interior", price = 50, currency = "bank", },
+			{ name = "veh_exterior", price = 50, currency = "bank", },
+			{ name = "veh_wheels", price = 50, currency = "bank", },
+			{ name = "veh_neons", price = 25, currency = "bank", },
+			{ name = "veh_xenons", price = 25, currency = "bank", },
+			{ name = "veh_tint", price = 25, currency = "bank", },
+			{ name = "veh_plates", price = 5, currency = "bank", },
+			{ name = "repairkit", price = 10, currency = "bank", },
+			{ name = "advancedrepairkit", price = 10, currency = "bank", },
+			{ name = "kq_tow_rope", price = 50, currency = "bank", },
+			{ name = "kq_winch", price = 200, currency = "bank", },
+			--{ name = "nitrous", price = 100, currency = "bank", },
+			--{ name = "tirerepairkit", price = 100, currency = "bank", },
+		},
+		locations = {
+			vector3(-360.31, -99.26, 38.55),
+		},
+		targets = {
+			{
+				ped = `mp_m_waremech_01`,
+				scenario = 'WORLD_HUMAN_COP_IDLES',
+				loc = vector3(-360.31, -99.26, 38.55),
+				heading = 67.5,
+			},
+		}
+	},
+
+	-- Cluckin' Bell
+	CluckinBell = {
+		name = "Cluckin' Bell",
+		blip = {
+			id = 59,
+			colour = 29,
+			scale = 0.8
+		},
+		inventory = {
+			{ name = 'cluckin_strips', price = 50, currency = 'bank' },
+			{ name = 'cluckin_nuggets', price = 50, currency = 'bank' },
+			{ name = 'cluckin_fries', price = 50, currency = 'bank' },
+			{ name = 'cluckin_soda', price = 50, currency = 'bank' },
+		},
+		locations = {
+			vec3(-146.89, -266.64, 43.6),
+		},
+		targets = {
+			{
+				ped = `csb_burgerdrug`,
+				scenario = 'WORLD_HUMAN_STAND_IMPATIENT',
+				loc = vec3(-146.89, -266.64, 42.6),
+				heading = 59.39,
+			},
 		}
 	}
 }

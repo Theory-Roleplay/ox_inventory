@@ -51,16 +51,35 @@ local function setContainerProperties(itemName, properties)
 	}
 end
 
-setContainerProperties('paperbag', {
+setContainerProperties('fastfoodbag', {
 	slots = 5,
-	maxWeight = 1000,
-	blacklist = { 'testburger' }
+	maxWeight = 3000,
 })
 
 setContainerProperties('pizzabox', {
 	slots = 5,
 	maxWeight = 1000,
 	whitelist = { 'pizza' }
+})
+
+setContainerProperties('keyring', {
+	slots = 10,
+	whitelist = { 'vehiclekey' }
+})
+
+setContainerProperties('wallet', {
+	slots = 10,
+	whitelist = { "money", "id_card", "driver_license", "boating_license", "pilot_license", "weapon_license", "hunting_license" }
+})
+
+setContainerProperties('evidence_kit', {
+	slots = 10,
+	whitelist = { 'empty_evidence_bag', 'gsrtestkit',	'dnatestkit', 'drugtestkit', 'fingerprintkit', 'mikrosil', 'fingerprinttape' }
+})
+
+setContainerProperties('evidence_locker', {
+	slots = 250,
+	whitelist = { 'filled_evidence_bag', 'empty_evidence_bag', 'sdcard' }
 })
 
 return containers

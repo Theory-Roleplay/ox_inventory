@@ -154,16 +154,29 @@ lib.callback.register('ox_inventory:openShop', function(source, data)
 end)
 
 local function canAffordItem(inv, currency, price)
-	local canAfford = price >= 0 and Inventory.GetItem(inv, currency, false, true) >= price
+	local player = server.GetPlayerFromId(inv.id)
+
+	local canAfford = false
+	if currency == 'bank' then
+		canAfford = price >= 0 and player.Functions.GetMoney('bank') >= price
+	else
+		canAfford = price >= 0 and Inventory.GetItem(inv, currency, false, true) >= price
+	end
 
 	return canAfford or {
 		type = 'error',
-		description = locale('cannot_afford', ('%s%s'):format((currency == 'money' and locale('$') or math.groupdigits(price)), (currency == 'money' and math.groupdigits(price) or ' '..Items(currency).label)))
+		description = locale('cannot_afford', ('%s%s'):format(((currency == 'money' or currency == 'bank') and locale('$') or math.groupdigits(price)), ((currency == 'money' or currency == 'bank') and math.groupdigits(price) or ' '..Items(currency).label)))
 	}
 end
 
 local function removeCurrency(inv, currency, price)
-	Inventory.RemoveItem(inv, currency, price)
+	local player = server.GetPlayerFromId(inv.id)
+
+	if currency == 'bank' then
+		player.Functions.RemoveMoney('bank', price)
+	else
+		Inventory.RemoveItem(inv, currency, price)
+	end	
 end
 
 local TriggerEventHooks = require 'modules.hooks.server'
@@ -185,6 +198,7 @@ lib.callback.register('ox_inventory:buyItem', function(source, data)
 	if data.toType == 'player' then
 		if data.count == nil then data.count = 1 end
 
+		local player = server.GetPlayerFromId(source)
 		local playerInv = Inventory(source)
 
 		if not playerInv or not playerInv.currentShop then return end
@@ -262,13 +276,25 @@ lib.callback.register('ox_inventory:buyItem', function(source, data)
 				playerInv.weight = newWeight
 				removeCurrency(playerInv, currency, price)
 
+				if currency == 'bank' then
+					exports['Renewed-Banking']:handleTransaction(
+						player.PlayerData.citizenid,
+						'Shop Purchase from ' .. shop.label,
+						price,
+						'',
+						shop.label,
+						player.PlayerData.charinfo.firstname .. ' ' .. player.PlayerData.charinfo.lastname,
+						'withdraw'
+					)
+				end
+
 				if fromData.count then
 					shop.items[data.fromSlot].count = fromData.count - count
 				end
 
 				if server.syncInventory then server.syncInventory(playerInv) end
 
-				local message = locale('purchased_for', count, metadata?.label or fromItem.label, (currency == 'money' and locale('$') or math.groupdigits(price)), (currency == 'money' and math.groupdigits(price) or ' '..Items(currency).label))
+				local message = locale('purchased_for', count, metadata?.label or fromItem.label, ((currency == 'money' or currency == 'bank') and locale('$') or math.groupdigits(price)), ((currency == 'money' or currency == 'bank') and math.groupdigits(price) or ' '..Items(currency).label))
 
 				if server.loglevel > 0 then
 					if server.loglevel > 1 or fromData.price >= 500 then

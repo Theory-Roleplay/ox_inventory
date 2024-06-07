@@ -459,7 +459,7 @@ return {
 
 		['WEAPON_PETROLCAN'] = {
 			label = 'Gas Can',
-			weight = 12000,
+			weight = 0,
 		},
 
 		['WEAPON_GADGETPISTOL'] = {
@@ -714,6 +714,13 @@ return {
 			label = 'Tear Gas',
 			weight = 600,
 			throwable = true,
+		},
+
+		-- reflow-hunting
+		['WEAPON_DARTGUN'] = { 
+			label = 'Dart Gun', 
+			weight = 1000, 
+			ammoname = "ammo-dart"
 		},
 	},
 
@@ -1874,6 +1881,12 @@ return {
 		['ammo-emp'] = {
 			label = 'EMP round',
 			weight = 400,
+		},
+
+		-- reflow-hunting
+		['ammo-dart'] = {
+			label = 'Dart Ammo',
+			weight = 200,
 		},
 	}
 }
