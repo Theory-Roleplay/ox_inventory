@@ -33,6 +33,17 @@ return {
 		[`zentorno`] = 1,
 		[`trophytruck`] = 0,
 		[`trophytruck2`] = 0,
+
+		-- LEO vehicles (no glovebox so crypto doesn't spawn)
+		[`ll1rb`] = 2,
+		[`ll2rb`] = 2,
+		[`ll3rb`] = 2,
+		[`ll4rb`] = 2,
+		[`ll5rb`] = 2,
+		[`ll7rb`] = 2,
+		[`21fireladder`] = 2,
+		[`TCFiretruck`] = 2,
+		[`loreambo1`] = 2,
 	},
 
 	-- slots, maxWeight; default weight is 8000 per slot
