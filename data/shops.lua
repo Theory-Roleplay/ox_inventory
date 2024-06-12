@@ -5,6 +5,7 @@ return {
 			id = 59, colour = 69, scale = 0.8
 		}, inventory = {
 			{ name = 'lockpick', price = 250, currency = 'bank' },
+			{ name = 'drill', price = 250, currency = 'bank' },
 			{ name = 'fruitphone', price = 100, currency = 'bank' },
 			{ name = 'robotphone', price = 100, currency = 'bank' },
 			{ name = 'blox', price = 5, currency = 'bank' },
