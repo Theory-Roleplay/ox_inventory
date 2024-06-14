@@ -808,7 +808,10 @@ function Inventory.Load(id, invType, owner)
 
         if not result then
             if server.randomloot then
-                return generateItems(id, 'vehicle')
+				-- THEORY: ID is the vehicle plate, check for restricted plates and don't spawn loot for those vehicles
+				if string.find(id, "^PD.*") == nil and string.find(id, "^EMS.*") == nil and string.find(id, "^TOW.*") == nil then 
+                	return generateItems(id, 'vehicle')
+				end
             end
         else
             result = result[invType]
