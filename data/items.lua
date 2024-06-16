@@ -73,16 +73,8 @@ return {
 		label = 'Money',
 		buttons = { { label = 'Place', action = function(slot) exports["kq_placeable_items"]:placeItem(slot) end } },
 	},
-
+		
 	-- GKSPhone
-	['phone'] = {
-		label = 'Phone',
-		weight = 250,
-		stack = false,
-		close = true,
-		description = "Very expensive phone",
-	},
-
 	["fruitphone"] = {
 		label = "fruitPhone",
 		weight = 250,
