@@ -1758,4 +1758,214 @@ return {
 			image = 'boostingdisabler.png'
 		}
 	},
+
+	-- theory-houserobbery
+	["housescrewdriver"] = {
+		label = "Useful Screwdriver",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "Bruteforce maybe?",
+		client = {
+			image = "screwdriver_yellow.png",
+		}
+	},
+
+	["bigtv"] = {
+		label = "TV",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolentv.png",
+		}
+	},
+
+	["bigtv_fat"] = {
+		label = "Fat TV",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "oldstolentv.png",
+		}
+	},
+
+	["boxofclothes"] = {
+		label = "Random clothes",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "These stink",
+		client = {
+			image = "stolenclothes.png",
+		}
+	},
+
+	["computer"] = {
+		label = "Computer",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolencomputer.png",
+		}
+	},
+
+	["acousticguitar"] = {
+		label = "Acoustic Guitar",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolenguitar_ac.png",
+		}
+	},
+
+	["coffemach"] = {
+		label = "Coffee Machine",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolencoffee.png",
+		}
+	},
+
+	["microwave"] = {
+		label = "Microwave",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolenmicro.png",
+		}
+	},
+
+	["golfclubs"] = {
+		label = "Clubs",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolenclubs.png",
+		}
+	},
+
+	["stereo"] = {
+		label = "HIFI",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolenstereo.png",
+		}
+	},
+
+	["electricguitar"] = {
+		label = "Electric Guitar",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolenguitar_lec.png",
+		}
+	},
+
+	["sculpture"] = {
+		label = "Fine Art",
+		weight = 30000,
+		stack = false,
+		close = true,
+		description = "Definitely not stolen",
+		client = {
+			image = "stolenart.png",
+		}
+	},
+
+	["burnerphone"] = {
+		label = "Disposable Phone",
+		weight = 500,
+		stack = false,
+		close = true,
+		description = "Impenetrable",
+		client = {
+			image = "burnerphone.png",
+		}
+	},
+
+	["t1_safe_key"] = {
+		label = "Strange Key",
+		weight = 500,
+		stack = false,
+		close = true,
+		description = "Probably unlocks something",
+		client = {
+			image = "t1_key.png",
+		}
+	},
+
+	["t2_safe_key"] = {
+		label = "Strange Key",
+		weight = 500,
+		stack = false,
+		close = true,
+		description = "Probably unlocks something",
+		client = {
+			image = "t2_key.png",
+		}
+	},
+
+	["t3_safe_key"] = {
+		label = "Strange Key",
+		weight = 500,
+		stack = false,
+		close = true,
+		description = "Probably unlocks something",
+		client = {
+			image = "t3_key.png",
+		}
+	},
+
+	["perfume"] = {
+		label = "Designer Perfume",
+		weight = 500,
+		stack = false,
+		close = true,
+		description = "Freshen up",
+		client = {
+			image = "stolenperfume.png",
+		}
+	},
+
+	["securityusb"] = {
+		label = "USB Bypass",
+		weight = 500,
+		stack = false,
+		close = true,
+		description = "John the Ripper",
+		client = {
+			image = "securityusb.png",
+		}
+	},
+
+	["securityphone"] = {
+		label = "Secure Phone",
+		weight = 500,
+		stack = false,
+		close = true,
+		description = "Requires another device. What does it do though?",
+		client = {
+			image = "securityphone.png",
+		}
+	},
 }
